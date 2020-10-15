@@ -1,0 +1,22 @@
+##------- linux 集群
+## 192.168.1.51 服务器
+./consul agent -server -bootstrap-expect 3 -data-dir data -node=n1 -ui -client 0.0.0.0 -bind 192.168.1.51 -join 192.168.1.51
+
+## 192.168.1.52 服务器
+./consul agent -server -bootstrap-expect 3 -data-dir data -node=n2  -client 0.0.0.0 -bind 192.168.1.52 -join 192.168.1.51
+
+## 192.168.1.53 服务器
+./consul agent -server -bootstrap-expect 3 -data-dir data -node=n3  -client 0.0.0.0 -bind 192.168.1.53 -join 192.168.1.51
+
+## 参数说明
+agent：Consul的核心命令，主要作用有维护成员信息、运行状态检测、声明服务以及处理请求等
+server 以server身份启动
+bootstrap-expect 集群要求的最少server数量，低于这个数量时集群失效。
+data-dir data存放目录
+node 节点id，同一集群不能重复
+bind 监听的ip地址
+client 客户端的ip地址
+join 加入集群
+ui ui界面
+
+ui界面 http://192.168.1.51:8500/
