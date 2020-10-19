@@ -14,7 +14,7 @@ public class HelloController {
     @Value("${server.port}")
     private String port;
 
-    @RequestMapping(name = "/hello", method = RequestMethod.POST)
+    @RequestMapping(name = "/hello")
     @ResponseBody
     public String hello() {
         return "userService:" + port;
@@ -27,6 +27,7 @@ public class HelloController {
         user.setId(id);
         user.setName("name:123123");
         user.setPhone("123456789");
+        user.setPort(port);
         return user;
     }
 
@@ -34,6 +35,7 @@ public class HelloController {
     @ResponseBody
     public User find(@RequestBody User user) {
         user.setPhone("测试对象返回");
+        user.setPort(port);
         return user;
     }
 

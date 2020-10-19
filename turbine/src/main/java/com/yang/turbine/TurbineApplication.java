@@ -1,22 +1,22 @@
-package com.yang.userview;
+package com.yang.turbine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 @SpringBootApplication
-// 服务发现
 @EnableDiscoveryClient
-@EnableFeignClients
+// 实测 @EnableHystrix 非必要
 @EnableHystrix
 @EnableHystrixDashboard
-public class UserViewApplication {
+@EnableTurbine
+public class TurbineApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserViewApplication.class, args);
+        SpringApplication.run(TurbineApplication.class, args);
     }
 
 }

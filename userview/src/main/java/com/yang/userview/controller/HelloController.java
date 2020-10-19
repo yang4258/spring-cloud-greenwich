@@ -27,13 +27,17 @@ public class HelloController {
     @Autowired
     private UserService userService;
 
-    /**获取所有服务提供者 */
+    /**
+     * 获取所有服务提供者
+     */
     @GetMapping("/instances-lists")
     public Object instancesLists() {
         return discoveryClient.getInstances("user-service");
     }
 
-    /** 获取所有注册服务名称     */
+    /**
+     * 获取所有注册服务名称
+     */
     @GetMapping("/services-lists")
     public Object servicesLists() {
         return discoveryClient.getServices();

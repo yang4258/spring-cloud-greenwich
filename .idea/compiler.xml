@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="turbine" />
         <module name="userservice" />
         <module name="parent" />
         <module name="userview" />
@@ -14,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="parent" target="1.8" />
+      <module name="turbine" target="1.8" />
       <module name="userservice" target="1.8" />
       <module name="userview" target="1.8" />
     </bytecodeTargetLevel>
@@ -21,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="parent" options="-parameters" />
+      <module name="turbine" options="-parameters" />
       <module name="userservice" options="-parameters" />
       <module name="userview" options="-parameters" />
     </option>
